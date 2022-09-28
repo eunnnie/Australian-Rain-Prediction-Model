@@ -301,9 +301,9 @@ t <- tbl_merge(tbls= list(tglm, tglmer, tglmer2),
 
 ## Background
 
-  In this manuscript, we built a next-day rain prediction model by studying whether various weather characteristics measured in Australia on a daily basis influence the next-day rain. 
+  In this manuscript, we built a next-day rain prediction model by studying if various weather characteristics, measured in Australia on a daily basis, affect the next-day's rainy weather. 
   
-  Australia has a varied climates, where it varies from location to location. According to the Bureau of Meteorology of the Australian Government, for simplicity, locations with approximately similar climates have been combined into eight climate zones (Bureau of Meteorology-Australian Government, n.d.).
+  Australia has a varied climate, where it varies from one location to another. According to the Bureau of Meteorology of the Australian Government, for simplicity, locations with approximately similar climates have been combined into eight climate zones (Bureau of Meteorology-Australian Government, n.d.).
   
   * Climate zone 1 - high humidity summer, warm winter 
   * Climate zone 2 - warm humid summer, mild winter 
@@ -314,7 +314,7 @@ t <- tbl_merge(tbls= list(tglm, tglmer, tglmer2),
   * Climate zone 7 - cool temperate 
   * Climate zone 8 - alpine
   
-  Since Australian weather differs greatly by location, it is inevitable that eventhough weather characteristics are measured on the same day, the characteristics may differ. 
+  Since Australian weather differs greatly by location, it is inevitable that eventhough weather characteristics are measured on the same day, they are very different. 
 
 # Methods
 
@@ -322,19 +322,19 @@ t <- tbl_merge(tbls= list(tglm, tglmer, tglmer2),
 
 ### Background
 
-  The data is composed of weather data for 22 cities in Australia, measured from 2007 to 2017. The data were collected at the day level. It includes 23 features, representing various weather characteristics, and it contained 145,460 total observations. After the data cleaning process, the dataset is divided into a training set and a test set, where the training set contains data from 2007 to 2016 and the test set contains data for 2017. The training set is used throughout the process of model building and the test set is used to test the model accuracy.
+  The data is composed of weather data for 22 cities in Australia, measured from 2007 to 2017. The data is collected at the day level. It includes 23 features, representing various weather characteristics, and it contains 145,460 total observations. After the data cleaning process, the dataset is divided into a training set and a test set, where the training set contains data from 2007 to 2016 and the test set contains data for 2017. The training set is used throughout the process of model building and the test set is used to test the model accuracy.
   
 ### Missing Values
 
-  The treatment of missing values is done in three steps. The first step was dropping the entire variable. These variables are the ones that proportion of missing values is over 35%. Such a large proportion made the variable less representative. The second step was replacing the missing values by the mean of the location and if the location's mean is missing, then the missing values were replaced by the mean of the 22 cities. Such a method was only applied to continuous variables. The last step was replacing the missing values with the mode, the most frequent response. Such a method was applied to categorical variables and if the data for a location is completely missing, then the missing values were replaced by the mode among the 22 cities.
+  The treatment of missing values is done in three steps. The first step was dropping the entire variable. These variables are the ones that the proportion of missing values is over 35%. Such a large proportion made the variable less representative. The second step was replacing the missing values with the mean of the location and if the location's mean is missing, then the missing values were replaced by the mean of the 22 cities. Such a method was only applied to continuous variables. The last step was replacing the missing values with the mode, the most frequent response. Such a method was applied to categorical variables and if the data for a location is completely missing, then the missing values were replaced by the mode among the 22 cities.
 
 ## Choice of Methods
 
-  To find the relationship between various weather characteristics and the next-day rain, the logistic generalized linear mixed model, GLMM, is used. 
+  To find the relationship between various weather characteristics and the next-day's rainy weather, the logistic generalized linear mixed model, GLMM, is used. 
   
-  A logistic GLMM is typically useful for a nested data with binary responses since it accounts for dependencies within hierarchical groups by defining random effects terms and it effectively analyses a non-normal response. 
+  A logistic GLMM is typically useful for a nested data with binary responses since it accounts for the dependencies within hierarchical groups by defining random effects terms and it effectively analyses a non-normal response. 
   
-  For our dataset, we assumed that the location variable behaves like a grouping factor, and so it is a random effects term. The assumption is made under the fact that the weather characteristics in Australia differ by location and tested statistically by comparing the values of AIC and BIC. 
+  For our dataset, we assumed that the location variable behaves like a grouping factor, and so, it is a random effects term. The assumption is made under the fact that the weather characteristics in Australia differ by location, and the asuumption is tested statistically by comparing the values of AIC and BIC. 
   
   A suitable mixed effects model for these purposes can be constructed by defining a random-effect for location into the standard logistic regression model. 
   
