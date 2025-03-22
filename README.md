@@ -1,7 +1,6 @@
 
 ## 📌 Project Summary | 프로젝트 요약
 
-- **📅 Date**: August 28, 2021  
 - **🛠 Tool | 도구**:  
   - R (R Markdown 기반 분석)  
   - Libraries: mgcv, glmnet, lme4, gtsummary, ggpubr, pROC 등  
