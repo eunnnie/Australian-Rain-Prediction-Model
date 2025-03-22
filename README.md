@@ -2,7 +2,7 @@
 ## 📌 Project Summary | 프로젝트 요약
 
 - **🛠 Tool | 도구**:  
-  - R (R Markdown 기반 분석)  
+  - R 
   - Libraries: mgcv, glmnet, lme4, gtsummary, ggpubr, pROC 등  
 - **🧪 Design | 설계**:  
   - Binary classification problem (이진 분류 문제)  
